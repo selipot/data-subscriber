@@ -64,7 +64,8 @@ def create_parser():
 
     # Adding optional arguments
     parser.add_argument("-f", "--force", dest="force", action="store_true", help = "Flag to force downloading files that are listed in CMR query, even if the file exists and checksum matches")  # noqa E501
-
+    parser.add_argument("-k", "--keyword", dest="keyword", help = "Select files in the collection by keyword. For example, --keyword=Basic")
+    
     # spatiotemporal arguments
     parser.add_argument("-sd", "--start-date", dest="startDate",
                         help="The ISO date time after which data should be retrieved. For Example, --start-date 2021-01-14T00:00:00Z",
