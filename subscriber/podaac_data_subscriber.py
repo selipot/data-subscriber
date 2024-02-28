@@ -331,7 +331,11 @@ def cmr_downloader(granules, extensions, args, data_path, file_start_times, ts_s
     for f in downloads:
         for extension in extensions:
             if pa.search_extension(extension, f):
-                filtered_downloads.append(f)
+                if args.keyword:
+                    if (f.find(args.keyword) > 0):
+                        filtered_downloads.append(f)
+                    else:
+                        filtered_downloads.append(f)
 
     downloads = filtered_downloads
 
